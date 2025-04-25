@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Coiny&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@300&family=Lexend:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+body{
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg,#ff0095, #65e8ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 7s ease infinite
+}
+@keyframes gradientAnimation {
+    0%{
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+      }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+#titre{
+    margin-left: 90px;
+}
+h1{
+    font-family: "Coiny";
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.658);
+    font-size: 80px;
+}
+#btnmid button{
+    border-radius: 8px;
+    font-size: 15px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+#btnmid{
+    margin-bottom: 40px;
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+}
+form{
+    margin-bottom: 40px;
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form > input {
+    border-radius: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+form > button{
+    background-color: #ff0095;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+#btnbot{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 80px;
+}
