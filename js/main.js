@@ -148,3 +148,19 @@ allButton.addEventListener('click', function() {
         task.style.display = "flex"; 
     });
 });
+// affiche les taches pas finis
+let pasFiniButton = document.querySelector('#btnmid button:last-child'); 
+
+pasFiniButton.addEventListener('click', function() {
+    let allTasks = document.querySelectorAll('.task');
+
+    allTasks.forEach(task => {
+        let taskContent = task.querySelector('span');
+
+        if (!taskContent.classList.contains('done')) {
+            task.style.display = "flex";
+        } else {
+            task.style.display = "none";
+        }
+    });
+});
