@@ -148,6 +148,7 @@ allButton.addEventListener('click', function() {
         task.style.display = "flex"; 
     });
 });
+
 // affiche les taches pas finis
 let pasFiniButton = document.querySelector('#btnmid button:last-child'); 
 
@@ -164,6 +165,7 @@ pasFiniButton.addEventListener('click', function() {
         }
     });
 });
+
 // ----------pokérain-----------
 const rainContainer = document.querySelector('.pokeball-rain');
 
