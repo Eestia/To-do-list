@@ -105,4 +105,35 @@ modifyButton.addEventListener('click', function() {
 
         modifyButton.textContent = "Confirmer";
         isModifying = true;
-   
+    } else {
+        let inputEdit = selectedTask.querySelector('input');
+
+        let newText = inputEdit.value.trim();
+        if (newText === "") return;
+
+        // Remplacer l'input par un span avec le nouveau texte
+        let newSpan = document.createElement('span');
+        newSpan.textContent = newText;
+
+        selectedTask.replaceChild(newSpan, inputEdit);
+
+        // Remettre le texte du bouton à "Modifier"
+        modifyButton.textContent = "Modifier";
+        isModifying = false;
+    }
+});
+let finiButton = document.querySelector('#btnmid button:nth-child(2)'); 
+
+finiButton.addEventListener('click', function() {
+    let allTasks = document.querySelectorAll('.task');
+
+    allTasks.forEach(task => {
+        let taskContent = task.querySelector('span');
+
+        if (taskContent.classList.contains('done')) {
+            task.style.display = "flex"; 
+        } else {
+            task.style.display = "none"; // Cache les tâches pas finies
+        }
+    });
+});
