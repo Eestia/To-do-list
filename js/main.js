@@ -122,6 +122,7 @@ modifyButton.addEventListener('click', function() {
         isModifying = false;
     }
 });
+// on affiche que les taches finis
 let finiButton = document.querySelector('#btnmid button:nth-child(2)'); 
 
 finiButton.addEventListener('click', function() {
@@ -133,7 +134,17 @@ finiButton.addEventListener('click', function() {
         if (taskContent.classList.contains('done')) {
             task.style.display = "flex"; 
         } else {
-            task.style.display = "none"; // Cache les tâches pas finies
+            task.style.display = "none";
         }
+    });
+});
+// on affiche toute les taches 
+let allButton = document.querySelector('#btnmid button:first-child');
+
+allButton.addEventListener('click', function() {
+    let allTasks = document.querySelectorAll('.task');
+
+    allTasks.forEach(task => {
+        task.style.display = "flex"; 
     });
 });
