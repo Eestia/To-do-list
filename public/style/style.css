@@ -127,3 +127,38 @@ form > button{
 #tasks{
     color: white;
 }
+/* ---------------pokérain-------------- */
+.pokeball-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* pour que la pluie ne gêne pas les clics */
+    overflow: hidden;
+    z-index: 0; /* derrière tout */
+}
+
+/* Chaque pokeball */
+.pokeball {
+    position: absolute;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../img/pokeball.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall linear infinite;
+}
+
+/* Animation de chute */
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
