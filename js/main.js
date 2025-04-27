@@ -171,19 +171,15 @@ function createPokeball() {
     const pokeball = document.createElement('div');
     pokeball.classList.add('pokeball');
     
-    // Position horizontale aléatoire
     pokeball.style.left = Math.random() * 100 + "vw";
     
-    // Durée d'animation aléatoire
     pokeball.style.animationDuration = (Math.random() * 3 + 2) + "s";
     
     rainContainer.appendChild(pokeball);
 
-    // Supprimer la pokeball après l'animation
     setTimeout(() => {
         pokeball.remove();
     }, 5000);
 }
 
-// Créer des pokeballs régulièrement
 setInterval(createPokeball, 300);
