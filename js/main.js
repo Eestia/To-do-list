@@ -42,3 +42,67 @@ form.addEventListener('submit', function(event) {
     input.value = "";
 });
 
+// pour le bouton "Done"
+DoneButton.addEventListener('click', function() {
+    let allTasks = document.querySelectorAll('.task');
+
+    allTasks.forEach(task => {
+        let selectButton = task.querySelector('.select-button');
+        let taskContent = task.querySelector('span');
+
+        if (selectButton.classList.contains('selected')) {
+            taskContent.classList.toggle('done');
+            selectButton.classList.remove('selected'); 
+            selectButton.textContent = "○"; 
+        }
+    });
+});
+// gestion de supression de tache
+let deleteButton = document.querySelector('#btnbot button:last-child'); // Cible le bouton "Supprimer"
+
+deleteButton.addEventListener('click', function() {
+    let allTasks = document.querySelectorAll('.task');
+
+    allTasks.forEach(task => {
+        let selectButton = task.querySelector('.select-button');
+
+        if (selectButton.classList.contains('selected')) {
+            task.remove(); // Supprime la tâche
+        }
+    });
+});
+
+// gestion de bouton modifier
+let modifyButton = document.querySelector('#btnbot button:nth-child(2)'); 
+
+let isModifying = false; 
+
+modifyButton.addEventListener('click', function() {
+    let selectedTask = null;
+    let allTasks = document.querySelectorAll('.task');
+
+    allTasks.forEach(task => {
+        let selectButton = task.querySelector('.select-button');
+        if (selectButton.classList.contains('selected')) {
+            selectedTask = task;
+        }
+    });
+
+    if (!selectedTask) return; // Si aucune sélection, on ne fait rien
+
+    let taskContent = selectedTask.querySelector('span');
+
+    if (!isModifying) {
+        let currentText = taskContent.textContent;
+
+        // on remplace le span par un input
+        let inputEdit = document.createElement('input');
+        inputEdit.type = 'text';
+        inputEdit.value = currentText;
+        inputEdit.classList.add('edit-input');
+
+        selectedTask.replaceChild(inputEdit, taskContent);
+
+        modifyButton.textContent = "Confirmer";
+        isModifying = true;
+   
