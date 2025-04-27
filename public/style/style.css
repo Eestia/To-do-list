@@ -69,9 +69,58 @@ form > button{
     padding-top: 8px;
     padding-bottom: 8px;
 }
+#bot{
+    background-color: #ff0095;
+    border: 3px solid #ff0088;
+    border-radius: 30px;
+    height: 150px;
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;      
+    padding: 0 40px;
+}
+#tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
 #btnbot{
     display: flex;
-    gap: 20px;
     flex-direction: column;
-    width: 80px;
+    align-items: end;
+    gap: 20px;
+}
+#btnbot button{
+    width:150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    
+}
+#rose{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.done {
+    text-decoration: line-through;
+}
+
+.select-button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.edit-input {
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 10px;
 }
